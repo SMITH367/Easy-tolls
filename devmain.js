@@ -206,6 +206,52 @@ class Conjunts {
 
 
 }
+class statistics {
+    constructor() {
+        this.mediad;
+        this.promediod;
+        this.medianad;
+        this.rangod;
+        this.varianzad;
+    }
+
+    media(data) {
+        this.mediad = 0;
+        for (let i in data) {
+            this.mediad += data[i];
+
+        }
+        return this.mediad / data.length;
+    }
+    promedio(data) {
+        let average = 0;
+        for (let i in data) {
+            average += data[i];
+        }
+        return average / data.length;
+    }
+    mediana(data) {
+
+        let orderData = data.sort((a, b) => a - b);
+        let value;
+        let mid = orderData.length / 2;
+
+        if (orderData.length % 2 == 0) {
+            this.medianad = (orderData[mid - 1] + orderData[mid]) / 2.0;
+        } else {
+            value = Math.floor(mid);
+            this.medianad = orderData[value];
+        }
+        return this.medianad;
+
+    }
+    rango() {}
+    varianzad() {}
+
+}
+a = new statistics()
+console.log(a.mediana([1, 2, 3, 4, 5, 6, 7, 10]));
+
 class Stack {
 
     // Does the simulation of a stack with its methods
@@ -335,4 +381,5 @@ const queue = new Queue()
 
 
 
+//Testing zone
 //Testing zone
