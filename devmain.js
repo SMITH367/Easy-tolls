@@ -373,6 +373,7 @@ const binarySearch = (value, array) => {
 const ofArray = new CalcArray();
 const areaOf = new Areas();
 const ofConjunts = new Conjunts();
+const statistic = new statistics();
 const stack = new Stack()
 const queue = new Queue()
 
