@@ -245,12 +245,31 @@ class statistics {
         return this.medianad;
 
     }
-    rango() {}
+    range(data) {
+
+        let maximun = 0;
+
+        for (let i in data) {
+            if (maximun < data[i]) {
+                maximun = data[i];
+            }
+        }
+        let minimun = data[0]
+
+        for (let i in data) {
+
+            if (data[i] < minimun) {
+                minimun = data[i];
+            }
+        }
+        return maximun - minimun;
+
+    }
     varianzad() {}
 
 }
 a = new statistics()
-console.log(a.mediana([1, 2, 3, 4, 5, 6, 7, 10]));
+console.log(a.range([1, 2, 3, 4, 5, 6, 7, 10]));
 
 class Stack {
 
