@@ -212,7 +212,8 @@ class statistics {
         this.promediod;
         this.medianad;
         this.rangod;
-        this.varianzad;
+        this.varianced = 0;
+        this.standarDesviaciond;
     }
 
     media(data) {
@@ -265,11 +266,29 @@ class statistics {
         return maximun - minimun;
 
     }
-    varianzad() {}
+    variance(data) {
+        let n = data.length;
+        let variance = 0;
+        let add = 0;
+        for (let i in data) {
+            add += data[i];
+        }
+        let average = add / data.length;
+        for (let i in data) {
+            this.varianced += Math.pow((data[i] - average), 2.0);
+        }
+        return this.varianced / (n - 1);
+    }
+    standarDesviacion(data) {
+        let variance = this.variance(data);
+        this.standarDesviaciond = Math.sqrt(variance);
+        return this.standarDesviaciond;
+
+    }
 
 }
 a = new statistics()
-console.log(a.range([1, 2, 3, 4, 5, 6, 7, 10]));
+console.log(a.standarDesviacion([2, 3, 4, 5]));
 
 class Stack {
 
