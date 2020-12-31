@@ -146,6 +146,46 @@ class Areas {
 
 }
 
+class analiticGeomtry {
+    constructor() {
+        this.rectEquationp;
+        this.distancep;
+        this.pendingp;
+        this.midPointp;
+
+    }
+    rectEquation(x1, x2, y1, y2) {
+        if (x1 === x2) {
+            return false;
+        } else {
+            this.rectEquationp = `y=${(y2 - y1) / (x2 - x1)}x+${(-(y2 - y1) * x1 / (x2 - x1) + y1)}`
+            return this.rectEquationp;
+        }
+
+    }
+
+    distance(x1, x2, y1, y2) {
+        this.distancep = Math.sqrt(Math.pow(x2 - x1) + Math.pow(y2 - y1));
+        return this.distancep;
+    }
+
+    midPoint(x1, x2, y1, y2) {
+        let mx = (x2 + x1) / 2;
+        let my = (y2 + y1) / 2;
+        this.midPointp = [mx, my];
+        return this.midPoint;
+
+    }
+    pending(x1, x2, y1, y2) {
+
+        this.pendingp = ((y2 + y1) / (x2 - x1));
+        return this.pendingp;
+
+    }
+
+
+}
+
 class Conjunts {
 
     constructor() {
@@ -287,8 +327,38 @@ class statistics {
     }
 
 }
-a = new statistics()
-console.log(a.standarDesviacion([2, 3, 4, 5]));
+class equations {
+    constructor() {
+        this.simpleEquationd;
+        this.quadraticEquationd;
+    }
+    simpleEquation(a, b, sign) {
+        if (a != 0 && sign == "+") {
+            this.simpleEquationd = (-1 * b) / a;
+
+        } else if (a != 0 && sign == "-") {
+            this.simpleEquationd = (1 * b) / a;
+
+        } else {
+            return false;
+        }
+        return this.simpleEquationd;
+
+    }
+    cuadraticEquation(a, b, c) {
+        let determinator = Math.pow(b, 2) - (4 * a * c);
+        let value1 = 0;
+        let value2 = 0;
+        if (determinator > 0) {
+            value1 = ((b * (-1)) + Math.sqrt(determinator)) / (2 * a);
+            value2 = ((b * (-1)) - Math.sqrt(determinator)) / (2 * a);
+            this.quadraticEquationd = [value1, value2];
+            return this.quadraticEquationd;
+        }
+    }
+}
+a = new equations();
+console.log(a.cuadraticEquation(2, -2, -24));
 
 class Stack {
 
@@ -315,7 +385,6 @@ class Stack {
     }
 
 }
-
 class Queue {
     //Does the simulation of a queue with its methods
     constructor() {
@@ -337,6 +406,7 @@ class Queue {
         return this.queue;
     }
 }
+
 
 
 
