@@ -7,55 +7,63 @@ Easy tools, simple and usefull library
 
 /* Arrays tools*/
 
-class CalcArray {
+ class CalcArray {
     //calculate operations and tolls for use with arrays.
-    constructor() {}
+    constructor() {
+        
+        this.addArray = 0;
+        this.averagea = 0;
+        this.maximun = 0;
+        this.minimun = [0];
+        this.object = {}
+        
+        
+        
+        
+    }
 
     adition(array) {
         //Obtain the add of all elements of an array 
-        let addArray = 0;
+        
         for (let i in array) {
-            addArray += array[i];
+            this.addArray += array[i];
         }
-        return addArray;
+        return this.addArray;
     }
 
     average(array) {
         //Obtain a average of an array.
-
-        let average = 0;
+        
         for (let i in array) {
-            average += array[i];
+            this.averagea += array[i];
         }
-        return average / array.length;
+        return this.averagea / array.length;
     }
 
     maximunValue(array) {
 
         //Obtain maximun value of an array
 
-        let maximun = 0;
+        
         for (let i in array) {
-            if (maximun < array[i]) {
-                maximun = array[i];
+            if (this.maximun < array[i]) {
+                this.maximun = array[i];
             }
         }
 
-        return maximun;
+        return this.maximun;
     }
     minimunValue(array) {
 
         //Obtain minimun value of an array
 
-        let minimun = array[0]
-
         for (let i in array) {
 
-            if (array[i] < minimun) {
-                minimun = array[i];
+            if (array[i] < this.minimun) {
+                this.minimun = array[i];
             }
         }
-        return minimun;
+        return this.minimun;
     }
 
 
@@ -81,14 +89,14 @@ class CalcArray {
 
         //return an object with index = id of array and value is the argument of array
 
-        let object = {};
+        
 
         for (let i in array) {
 
-            object[i] = array[i];
+            this.object[i] = array[i];
 
         }
-        return object;
+        return this.object;
     }
 
 }
