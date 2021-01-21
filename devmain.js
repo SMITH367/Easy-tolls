@@ -376,6 +376,50 @@ const generateString = (length) => {
    }
    return result;
 }
+
+const emailValidation = (email)=>
+{
+    
+    let position;
+    let counter=0;
+    let charters = "_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.@-_+{}|~`!*$%&=?/'";
+    
+    for (let i in email){
+        if(email[i]==='@'){
+                counter += 1;
+            }
+        if (charters.includes(email[i])){
+        
+        } else{
+        return false;
+        }
+    }
+    
+    for(let i in email){
+        
+        if (email[i]==='@'){
+            position = i;
+            if(position > 0 && counter==1){
+                for(let i in email){
+                    
+                    if(email[i]=='.'&&email[i]!=email[0]){
+                    if(email[i]=='.' && position>i && email[i] !=email.charAt(email.length-1)){
+                        return true;
+                        }
+                    }
+                    
+                }
+            }
+            
+        }
+        
+    }
+  
+}
+
+
+
+
 class Stack {
 
     // Does the simulation of a stack with its methods
