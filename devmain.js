@@ -254,7 +254,7 @@ class Conjunts {
 
 
 }
-class statistics {
+class Statistics {
     constructor() {
         this.mediad;
         this.promediod;
@@ -541,9 +541,9 @@ const binarySearch = (value, array) => {
 const ofArray = new CalcArray();
 const areaOf = new Areas();
 const ofConjunts = new Conjunts();
-const statistic = new statistics();
-const stack = new Stack()
-const queue = new Queue()
+const statistic = new Statistics();
+const stack = new Stack();
+const queue = new Queue();
 
 
 //Exporting all objects and functions
