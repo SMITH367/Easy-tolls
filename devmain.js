@@ -505,7 +505,7 @@ class LinkedList {
       }
     }
   }
-  print() {
+  viewElements() {
     let currentNode = this.head;
     while (currentNode) {
       console.log(currentNode.value);
@@ -587,7 +587,8 @@ const areaOf = new Areas();
 const ofConjunts = new Conjunts();
 const statistic = new Statistics();
 const stack = new Stack();
-const queue = new Queue();
+const queue = new Queue()
+const linkedList = new LinkedList();
 
 
 //Exporting all objects and functions
