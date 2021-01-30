@@ -296,6 +296,47 @@ class Statistics {
 
 }
 
+class analiticGeomtry {
+    constructor() {
+        this.rectEquationp;
+        this.distancep;
+        this.pendingp;
+        this.midPointp;
+
+    }
+    rectEquation(x1, x2, y1, y2) {
+        if (x1 === x2) {
+            return false;
+        } else {
+            this.rectEquationp = `y=${(y2 - y1) / (x2 - x1)}x+${(-(y2 - y1) * x1 / (x2 - x1) + y1)}`
+            return this.rectEquationp;
+        }
+
+    }
+
+    distance(x1, x2, y1, y2) {
+        this.distancep = Math.sqrt(Math.pow(x2 - x1) + Math.pow(y2 - y1));
+        return this.distancep;
+    }
+
+    midPoint(x1, x2, y1, y2) {
+        let mx = (x2 + x1) / 2;
+        let my = (y2 + y1) / 2;
+        this.midPointp = [mx, my];
+        return this.midPoint;
+
+    }
+    pending(x1, x2, y1, y2) {
+
+        this.pendingp = ((y2 + y1) / (x2 - x1));
+        return this.pendingp;
+
+    }
+
+
+}
+
+
 const generateString = (length) => {
    let result           = '';
    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -515,6 +556,7 @@ const ofArray = new CalcArray();
 const areaOf = new Areas();
 const ofConjunts = new Conjunts();
 const statistic = new Statistics();
+const analiticGeometry = new analiticGeomtry();
 const stack = new Stack();
 const queue = new Queue()
 const linkedList = new LinkedList();
