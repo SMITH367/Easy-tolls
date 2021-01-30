@@ -295,37 +295,6 @@ class Statistics {
     }
 
 }
-class equations {
-    constructor() {
-        this.simpleEquationd;
-        this.quadraticEquationd;
-    }
-    simpleEquation(a, b, sign) {
-        if (a != 0 && sign == "+") {
-            this.simpleEquationd = (-1 * b) / a;
-
-        } else if (a != 0 && sign == "-") {
-            this.simpleEquationd = (1 * b) / a;
-
-        } else {
-            return false;
-        }
-        return this.simpleEquationd;
-
-    }
-    cuadraticEquation(a, b, c) {
-        let determinator = Math.pow(b, 2) - (4 * a * c);
-        let value1 = 0;
-        let value2 = 0;
-        if (determinator > 0) {
-            value1 = ((b * (-1)) + Math.sqrt(determinator)) / (2 * a);
-            value2 = ((b * (-1)) - Math.sqrt(determinator)) / (2 * a);
-            this.quadraticEquationd = [value1, value2];
-            return this.quadraticEquationd;
-        }
-    }
-}
-
 
 const generateString = (length) => {
    let result           = '';
