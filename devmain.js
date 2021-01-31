@@ -164,6 +164,76 @@ class Areas {
 
 }
 
+
+
+class Perimeter{
+    
+    constructor(){
+        
+        this.perimeter = 0;
+    }
+    
+    square(side){
+        
+        this.perimeter = side*4;
+        return this.perimeter;
+    }
+    triangule(side1,side2,side3){
+        
+        this.perimeter = side1 + side2 + side3;
+        
+        return this.perimeter;
+    }
+    circle(radio){
+        
+        this.perimeter = 2 * Math.PI * radio;
+        
+        return this.perimeter;
+        
+    }
+    rectangule(sidea,sideb){
+        
+        if(sidea != sideb){
+            
+            this.perimeter = (sidea * 2) + (sideb * 2);
+        
+            return this.perimeter;
+            
+        }
+    }
+    
+    cube(heigth,large,width){
+        
+        this.perimeter = (4*heigth)+(4*large)+(4*width);
+        
+        return this.perimeter;
+    }
+    shepere(radio){
+        
+        let diameter = radio * 2;
+        this.sheperep = Math.PI * diameter;
+        
+        return this.sheperep;
+        
+    }
+    
+    nAgono(sides,type){
+      
+         if (sides.length === type && sides.length >= 4){
+        
+            for(let i in sides){
+            
+                this.perimeter += sides[i]
+            }
+      
+        }
+        
+        return this.perimeter;
+        
+    }
+}
+
+
 class Conjunts {
 
     constructor() {
