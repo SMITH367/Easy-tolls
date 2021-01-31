@@ -453,7 +453,7 @@ const emailValidation = (email)=>
                 for(let i in email){
                     
                     if(email[i]=='.'&&email[i]!=email[0]){
-                    if(email[i]=='.' && position>i && email[i] !=email.charAt(email.length-1)){
+                    if(email[i]=='.' && position > email[i] && email[i] !=email.charAt(email.length-1)){
                         return true;
                         }
                     }
