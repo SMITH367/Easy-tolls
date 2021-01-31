@@ -376,7 +376,7 @@ class Statistics {
 
 }
 
-class analiticGeomtry {
+class AnaliticGeometry {
     constructor() {
         this.rectEquationp;
         this.distancep;
@@ -637,9 +637,9 @@ const areaOf = new Areas();
 const perimeterOf = new Perimeter();
 const ofConjunts = new Conjunts();
 const statistic = new Statistics();
-const geometryAnalitic = new analiticGeomtry();
+const geometryAnalitic = new AnaliticGeometry();
 const stack = new Stack();
-const queue = new Queue()
+const queue = new Queue();
 const linkedList = new LinkedList();
 
 
