@@ -634,6 +634,7 @@ const binarySearch = (value, array) => {
 
 const ofArray = new CalcArray();
 const areaOf = new Areas();
+const perimeterOf = new Perimeter();
 const ofConjunts = new Conjunts();
 const statistic = new Statistics();
 const analiticGeometry = new analiticGeomtry();
