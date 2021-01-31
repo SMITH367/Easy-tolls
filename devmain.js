@@ -12,13 +12,11 @@ Easy tools, simple and usefull library
     constructor() {
         
         this.addArray = 0;
+        this.productA; 
         this.averagea = 0;
         this.maximun = 0;
         this.minimun = [0];
         this.object = {}
-        
-        
-        
         
     }
 
@@ -29,7 +27,19 @@ Easy tools, simple and usefull library
             this.addArray += array[i];
         }
         return this.addArray;
+    }  
+
+    product(array){
+        this.productA=1;
+        for(let i in array){
+            
+            this.productA*=array[i];
+            
+        }
+        return this.productA;
+        
     }
+    
 
     average(array) {
         //Obtain a average of an array.
