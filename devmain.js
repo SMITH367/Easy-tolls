@@ -417,6 +417,121 @@ class AnaliticGeometry {
 }
 
 
+class FormTools{
+
+constructor(){
+    
+    this.confirmation = true;
+    
+}
+
+
+emailValidation (email)   
+  {
+
+    let position;
+    let counter=0;
+    let charters = "_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.@-_+{}|~`!*$%&=?/'";
+
+    for (let i in email){
+        if(email[i]==='@'){
+                counter += 1;
+            }
+        if (charters.includes(email[i])){
+
+        } else{
+        return false;
+        }
+    }
+
+    for(let i in email){
+
+        if (email[i]==='@'){
+            position = i;
+            if(position > 0 && counter==1){
+                for(let i in email){
+
+                    if(email[i]=='.'&&email[i]!=email[0]){
+                    if(email[i]=='.' && position> email[i] && email[i] !=email.charAt(email.length-1)){
+                        return this.confirmation;
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+    }
+
+  }
+  
+  phoneValidation(min,max,number){
+    
+
+    let lengthNumber = number.toString().length;
+
+    
+    if(typeof(number) == 'number' && lengthNumber >= min && lengthNumber <= max){
+        
+        this.confirmation;
+        
+    } else{
+        
+        return false;
+    }
+      
+  }
+  inputValidation(min,max,input,t){
+      
+      for (let i in t){
+          if (input.includes(t[i])){
+              return false;
+          }
+      }
+      
+      if(input.length > min && input.length <= max && input.length > 0){
+          return this.confirmation ;
+      }
+      else{
+          return false; 
+      }
+  }
+  
+  passawordValidation(passaword1,charmin){
+     
+    let capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",lower = "abcdefghijklmnopqrstuvwxyz",numbers = "0123456789";
+    let validation1,validation2,validation3;
+    
+    if(charmin>0) if(passaword1.length < charmin) return false;
+        
+    for(let i in capital){
+        if(passaword1.includes(capital[i])){
+            validation1 = true;
+        }
+    }
+    for(let i in lower){
+        if(passaword1.includes(lower[i])){
+            validation2 = true;
+        }   
+    }
+    for (let i in numbers){
+        if(passaword1.includes(numbers[i])){
+            validation3 = true;
+        }
+    }
+    
+    if(validation1 == true && validation2 == true && validation3 == true){
+        return this.confirmation;
+    }
+
+  }
+
+    
+}   
+
+
+
 const generateString = (length) => {
    let result           = '';
    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -426,47 +541,6 @@ const generateString = (length) => {
    }
    return result;
 }
-
-const emailValidation = (email)=>
-{
-    
-    let position;
-    let counter=0;
-    let charters = "_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.@-_+{}|~`!*$%&=?/'";
-    
-    for (let i in email){
-        if(email[i]==='@'){
-                counter += 1;
-            }
-        if (charters.includes(email[i])){
-        
-        } else{
-        return false;
-        }
-    }
-    
-    for(let i in email){
-        
-        if (email[i]==='@'){
-            position = i;
-            if(position > 0 && counter==1){
-                for(let i in email){
-                    
-                    if(email[i]=='.'&&email[i]!=email[0]){
-                    if(email[i]=='.' && position > email[i] && email[i] !=email.charAt(email.length-1)){
-                        return true;
-                        }
-                    }
-                    
-                }
-            }
-            
-        }
-        
-    }
-  
-}
-
 
 
 
