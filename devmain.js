@@ -469,6 +469,51 @@ class AnaliticGeometry {
 }
 
 
+class Equations {
+    constructor() {
+        this.simpleEquationd;
+        this.quadraticEquationd;
+    }
+    simpleEquation(a,sign,b,c) {
+        if (a != 0 && sign == "+") {
+            this.simpleEquationd = (c-b)/a;
+
+        } else if (a != 0 && sign == "-") {
+            this.simpleEquationd = (c+b) / a;
+
+        } else if (a != 0 && sign == "*"){
+            
+            this.simpleEquationd = (c/b) / a;
+            
+        } else if(a !=0 && sign == "/"){
+            
+            this.simpleEquationd = (c*b) / a;
+        }
+        
+        else {
+            return false;
+        }
+        return this.simpleEquationd;
+
+    }
+    cuadraticEquation(a, b, c) {
+        let determinator = Math.pow(b, 2) - (4 * a * c);
+        let value1 = 0;
+        let value2 = 0;
+        if (determinator > 0 && a != 0) {
+            value1 = ((b * (-1)) + Math.sqrt(determinator)) / (2 * a);
+            value2 = ((b * (-1)) - Math.sqrt(determinator)) / (2 * a);
+            this.quadraticEquationd = [value1, value2];
+            return this.quadraticEquationd;
+        } else{
+            
+            return "is not a real number";
+        }
+    }
+    
+}
+
+
 class FormTools{
 
 constructor(){
@@ -764,6 +809,7 @@ const perimeterOf = new Perimeter();
 const ofConjunts = new Conjunts();
 const statistic = new Statistics();
 const geometryAnalitic = new AnaliticGeometry();
+const equations = Equations();
 const stack = new Stack();
 const queue = new Queue();
 const linkedList = new LinkedList();
