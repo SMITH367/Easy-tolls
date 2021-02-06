@@ -95,6 +95,58 @@ Easy tools, simple and usefull library
         }
 
     }
+
+        
+    type (array) {
+    
+    let aux=0,aux2=0,aux3=0, aux4 =0;
+    
+    if(array.length > 0 && array.includes(NaN) == false && array.includes(undefined)==false && array.includes(null) == false){
+        
+        for(let i in array){
+        
+            if(typeof(array[i])==="number"){
+                
+                aux = 1;
+            }
+            else if(typeof(array[i])==="string"){
+       
+                aux2 = 1;
+                
+            } 
+            else if(typeof(array[i])==="boolean"){
+                
+                aux3 = 1;
+            }
+            else if (typeof(array[i])==="object"){
+               aux4 = 1; 
+            }
+            
+        }
+        
+    } else{
+        
+        if(array.length <= 0) return "emply";
+        else return false;
+    }
+    if(aux == 1 && aux2 ==0 && aux3 ==0 && aux4==0) {
+        return "number";
+    }
+    else if(aux == 0 && aux2 == 1 && aux3 ==0 && aux4==0){
+        return "string";
+    }
+    else if(aux ==0 && aux2==0 && aux3 ==1 && aux4 ==0){
+    return "boolean";
+    }
+    else if(aux ==0 && aux2 ==0 && aux3 ==0 && aux4 ==1) {
+        return "object";
+    }
+    else if(aux != 0 || aux2 !=0 || aux3 !=0 ||aux4 !=0) {
+        return "mixed";
+    }
+    
+  }
+
     arrayTObject(array) {
 
         //return an object with index = id of array and value is the argument of array
