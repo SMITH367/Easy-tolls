@@ -15,7 +15,7 @@ Easy tools, simple and usefull library
         this.productA; 
         this.averagea = 0;
         this.maximun = 0;
-        this.minimun = [0];
+        this.minimun;
         this.object = {}
         
     }
@@ -68,14 +68,17 @@ Easy tools, simple and usefull library
         //Obtain minimun value of an array
 
         for (let i in array) {
+             
+            this.minimun = array[0]
 
-            if (array[i] < this.minimun) {
+            if (this.minimun > array[i]) {
                 this.minimun = array[i];
+                
             }
         }
         return this.minimun;
+        
     }
-
 
 
     generateArray(numberof) {
