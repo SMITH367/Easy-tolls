@@ -631,6 +631,112 @@ emailValidation (email)
 }   
 
 
+const functionTest = (param, method, test, answer) => {
+
+    let values = [];
+    let param1, param2, param3, param4, param5, lenTest = 0,
+        datas = [];
+
+
+    for (let i in test) {
+        lenTest += test[i].length;
+    }
+
+    if (param == 1) {
+        for (let i in test) {
+
+            if (method(test[i]) == answer[i])
+                values.push(true);
+
+            else
+                values.push(false);
+
+        }
+    }
+
+    if (test.length == answer.length && param == lenTest) {
+
+        if (param == 2) {
+
+            for (let i in test) {
+
+                param1 = test[i][0];
+                param2 = test[i][1];
+
+                if (method(param1, param2) == answer[i])
+                    values.push(true)
+
+                else
+                    values.push(false);
+
+            }
+
+        } else if (param == 3) {
+
+            for (let i in test) {
+
+                param1 = test[i][0];
+                param2 = test[i][1];
+                param3 = test[i][2];
+
+                if (method(param1, param2, param3) == answer[i])
+                    values.push(true)
+
+                else
+                    values.push(false);
+
+            }
+
+
+        } else if (param == 4) {
+
+            for (let i in test) {
+
+                param1 = test[i][0];
+                param2 = test[i][1];
+                param3 = test[i][2];
+                param4 = test[i][3];
+
+
+                if (method(param1, param2, param3, param4) == answer[i])
+                    values.push(true)
+
+                else
+                    values.push(false);
+
+
+            }
+        } else if (param == 5) {
+
+            for (let i in test) {
+
+                param1 = test[i][0];
+                param2 = test[i][1];
+                param3 = test[i][2];
+                param4 = test[i][3];
+                param5 = test[i][4];
+
+
+                if (method(param1, param2, param3, param4, param5) == answer[i])
+                    values.push(true);
+
+                else
+                    values.push(false);
+
+            }
+
+        }
+
+    }
+    if (values.includes(false) == true) return false;
+    else {
+        if (values.length > 0) return true;
+
+    }
+
+
+}
+
 
 const generateString = (length) => {
    let result           = '';
