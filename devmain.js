@@ -725,7 +725,48 @@ const functionTest = (param, method, test, answer) => {
 
             }
 
+        } else if(param == 6){
+        
+        for(let i in test){
+           
+            param1 = test[i][0];
+            param2 = test[i][1];
+            param3 = test[i][2];
+            param4 = test[i][3];
+            param5 = test[i][4];
+            param6 = test[i][5];
+            
+            
+        if(method(param1,param2,param3,param4,param5,param6) == answer[i])
+            values.push(true);
+            
+        else 
+            values.push(false);
+            
         }
+        
+    } else if(param == 7){
+        
+        for(let i in test){
+           
+            param1 = test[i][0];
+            param2 = test[i][1];
+            param3 = test[i][2];
+            param4 = test[i][3];
+            param5 = test[i][4];
+            param6 = test[i][5];
+            param7 = test[i][6];
+            
+            
+        if(method(param1,param2,param3,param4,param5,param6,param7) == answer[i])
+            values.push(true);
+            
+        else 
+            values.push(false);
+            
+        }
+        
+    } 
 
     }
     if (values.includes(false) == true) return false;
