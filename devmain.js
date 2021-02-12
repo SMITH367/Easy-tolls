@@ -7,43 +7,43 @@ Easy tools, simple and usefull library
 
 /* Arrays tools*/
 
- class CalcArray {
+class CalcArray {
     //calculate operations and tolls for use with arrays.
     constructor() {
-        
+
         this.addArray = 0;
-        this.productA; 
+        this.productA;
         this.averagea = 0;
         this.maximun = 0;
         this.minimun;
         this.object = {}
-        
+
     }
 
     adition(array) {
         //Obtain the add of all elements of an array 
-        
+
         for (let i in array) {
             this.addArray += array[i];
         }
         return this.addArray;
-    }  
+    }
 
-    product(array){
-        this.productA=1;
-        for(let i in array){
-            
-            this.productA*=array[i];
-            
+    product(array) {
+        this.productA = 1;
+        for (let i in array) {
+
+            this.productA *= array[i];
+
         }
         return this.productA;
-        
+
     }
-    
+
 
     average(array) {
         //Obtain a average of an array.
-        
+
         for (let i in array) {
             this.averagea += array[i];
         }
@@ -54,7 +54,7 @@ Easy tools, simple and usefull library
 
         //Obtain maximun value of an array
 
-        
+
         for (let i in array) {
             if (this.maximun < array[i]) {
                 this.maximun = array[i];
@@ -68,16 +68,16 @@ Easy tools, simple and usefull library
         //Obtain minimun value of an array
 
         for (let i in array) {
-             
+
             this.minimun = array[0]
 
             if (this.minimun > array[i]) {
                 this.minimun = array[i];
-                
+
             }
         }
         return this.minimun;
-        
+
     }
 
 
@@ -99,62 +99,58 @@ Easy tools, simple and usefull library
 
     }
 
-        
-    type (array) {
-    
-    let aux=0,aux2=0,aux3=0, aux4 =0;
-    
-    if(array.length > 0 && array.includes(NaN) == false && array.includes(undefined)==false && array.includes(null) == false){
-        
-        for(let i in array){
-        
-            if(typeof(array[i])==="number"){
-                
-                aux = 1;
+
+    type(array) {
+
+        let aux = 0,
+            aux2 = 0,
+            aux3 = 0,
+            aux4 = 0;
+
+        if (array.length > 0 && array.includes(NaN) == false && array.includes(undefined) == false && array.includes(null) == false) {
+
+            for (let i in array) {
+
+                if (typeof (array[i]) === "number") {
+
+                    aux = 1;
+                } else if (typeof (array[i]) === "string") {
+
+                    aux2 = 1;
+
+                } else if (typeof (array[i]) === "boolean") {
+
+                    aux3 = 1;
+                } else if (typeof (array[i]) === "object") {
+                    aux4 = 1;
+                }
+
             }
-            else if(typeof(array[i])==="string"){
-       
-                aux2 = 1;
-                
-            } 
-            else if(typeof(array[i])==="boolean"){
-                
-                aux3 = 1;
-            }
-            else if (typeof(array[i])==="object"){
-               aux4 = 1; 
-            }
-            
+
+        } else {
+
+            if (array.length <= 0) return "emply";
+            else return false;
         }
-        
-    } else{
-        
-        if(array.length <= 0) return "emply";
-        else return false;
+        if (aux == 1 && aux2 == 0 && aux3 == 0 && aux4 == 0) {
+            return "number";
+        } else if (aux == 0 && aux2 == 1 && aux3 == 0 && aux4 == 0) {
+            return "string";
+        } else if (aux == 0 && aux2 == 0 && aux3 == 1 && aux4 == 0) {
+            return "boolean";
+        } else if (aux == 0 && aux2 == 0 && aux3 == 0 && aux4 == 1) {
+            return "object";
+        } else if (aux != 0 || aux2 != 0 || aux3 != 0 || aux4 != 0) {
+            return "mixed";
+        }
+
     }
-    if(aux == 1 && aux2 ==0 && aux3 ==0 && aux4==0) {
-        return "number";
-    }
-    else if(aux == 0 && aux2 == 1 && aux3 ==0 && aux4==0){
-        return "string";
-    }
-    else if(aux ==0 && aux2==0 && aux3 ==1 && aux4 ==0){
-    return "boolean";
-    }
-    else if(aux ==0 && aux2 ==0 && aux3 ==0 && aux4 ==1) {
-        return "object";
-    }
-    else if(aux != 0 || aux2 !=0 || aux3 !=0 ||aux4 !=0) {
-        return "mixed";
-    }
-    
-  }
 
     arrayTObject(array) {
 
         //return an object with index = id of array and value is the argument of array
 
-        
+
 
         for (let i in array) {
 
@@ -168,9 +164,9 @@ Easy tools, simple and usefull library
 class Areas {
 
     constructor() {
-            this.area = true;
-        }
-        // Areas and perimeters
+        this.area = true;
+    }
+    // Areas and perimeters
 
     circle(radio) {
 
@@ -221,70 +217,70 @@ class Areas {
 
 
 
-class Perimeter{
-    
-    constructor(){
-        
+class Perimeter {
+
+    constructor() {
+
         this.perimeter = 0;
     }
-    
-    square(side){
-        
-        this.perimeter = side*4;
+
+    square(side) {
+
+        this.perimeter = side * 4;
         return this.perimeter;
     }
-    triangule(side1,side2,side3){
-        
+    triangule(side1, side2, side3) {
+
         this.perimeter = side1 + side2 + side3;
-        
+
         return this.perimeter;
     }
-    circle(radio){
-        
+    circle(radio) {
+
         this.perimeter = 2 * Math.PI * radio;
-        
+
         return this.perimeter;
-        
+
     }
-    rectangule(sidea,sideb){
-        
-        if(sidea != sideb){
-            
+    rectangule(sidea, sideb) {
+
+        if (sidea != sideb) {
+
             this.perimeter = (sidea * 2) + (sideb * 2);
-        
+
             return this.perimeter;
-            
+
         }
     }
-    
-    cube(heigth,large,width){
-        
-        this.perimeter = (4*heigth)+(4*large)+(4*width);
-        
+
+    cube(heigth, large, width) {
+
+        this.perimeter = (4 * heigth) + (4 * large) + (4 * width);
+
         return this.perimeter;
     }
-    shepere(radio){
-        
+    shepere(radio) {
+
         let diameter = radio * 2;
         this.sheperep = Math.PI * diameter;
-        
+
         return this.sheperep;
-        
+
     }
-    
-    nAgono(sides,type){
-      
-         if (sides.length === type && sides.length >= 4){
-        
-            for(let i in sides){
-            
+
+    nAgono(sides, type) {
+
+        if (sides.length === type && sides.length >= 4) {
+
+            for (let i in sides) {
+
                 this.perimeter += sides[i]
             }
-      
+
         }
-        
+
         return this.perimeter;
-        
+
     }
 }
 
@@ -477,23 +473,21 @@ class Equations {
         this.simpleEquationd;
         this.quadraticEquationd;
     }
-    simpleEquation(a,sign,b,c) {
+    simpleEquation(a, sign, b, c) {
         if (a != 0 && sign == "+") {
-            this.simpleEquationd = (c-b)/a;
+            this.simpleEquationd = (c - b) / a;
 
         } else if (a != 0 && sign == "-") {
-            this.simpleEquationd = (c+b) / a;
+            this.simpleEquationd = (c + b) / a;
 
-        } else if (a != 0 && sign == "*"){
-            
-            this.simpleEquationd = (c/b) / a;
-            
-        } else if(a !=0 && sign == "/"){
-            
-            this.simpleEquationd = (c*b) / a;
-        }
-        
-        else {
+        } else if (a != 0 && sign == "*") {
+
+            this.simpleEquationd = (c / b) / a;
+
+        } else if (a != 0 && sign == "/") {
+
+            this.simpleEquationd = (c * b) / a;
+        } else {
             return false;
         }
         return this.simpleEquationd;
@@ -508,127 +502,128 @@ class Equations {
             value2 = ((b * (-1)) - Math.sqrt(determinator)) / (2 * a);
             this.quadraticEquationd = [value1, value2];
             return this.quadraticEquationd;
-        } else{
-            
+        } else {
+
             return "is not a real number";
         }
     }
-    
+
 }
 
 
-class FormTools{
+class FormTools {
 
-constructor(){
-    
-    this.confirmation = true;
-    
-}
+    constructor() {
+
+        this.confirmation = true;
+
+    }
 
 
-emailValidation (email)   
-  {
+    emailValidation(email) {
 
-    let position;
-    let counter=0;
-    let charters = "_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.@-_+{}|~`!*$%&=?/'";
+        let position;
+        let counter = 0;
+        let charters = "_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.@-_+{}|~`!*$%&=?/'";
 
-    for (let i in email){
-        if(email[i]==='@'){
+        for (let i in email) {
+            if (email[i] === '@') {
                 counter += 1;
             }
-        if (charters.includes(email[i])){
+            if (charters.includes(email[i])) {
 
-        } else{
-        return false;
+            } else {
+                return false;
+            }
         }
-    }
 
-    for(let i in email){
+        for (let i in email) {
 
-        if (email[i]==='@'){
-            position = i;
-            if(position > 0 && counter==1){
-                for(let i in email){
+            if (email[i] === '@') {
+                position = i;
+                if (position > 0 && counter == 1) {
+                    for (let i in email) {
 
-                    if(email[i]=='.'&&email[i]!=email[0]){
-                    if(email[i]=='.' && position> email[i] && email[i] !=email.charAt(email.length-1)){
-                        return this.confirmation;
+                        if (email[i] == '.' && email[i] != email[0]) {
+                            if (email[i] == '.' && position > email[i] && email[i] != email.charAt(email.length - 1)) {
+                                return this.confirmation;
+                            }
                         }
-                    }
 
+                    }
                 }
+
             }
 
         }
 
     }
 
-  }
-  
-  phoneValidation(min,max,number){
-    
+    phoneValidation(min, max, number) {
 
-    let lengthNumber = number.toString().length;
 
-    
-    if(typeof(number) == 'number' && lengthNumber >= min && lengthNumber <= max){
-        
-        this.confirmation;
-        
-    } else{
-        
-        return false;
+        let lengthNumber = number.toString().length;
+
+
+        if (typeof (number) == 'number' && lengthNumber >= min && lengthNumber <= max) {
+
+            this.confirmation;
+
+        } else {
+
+            return false;
+        }
+
     }
-      
-  }
-  inputValidation(min,max,input,t){
-      
-      for (let i in t){
-          if (input.includes(t[i])){
-              return false;
-          }
-      }
-      
-      if(input.length > min && input.length <= max && input.length > 0){
-          return this.confirmation ;
-      }
-      else{
-          return false; 
-      }
-  }
-  
-  passawordValidation(passaword1,charmin){
-     
-    let capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",lower = "abcdefghijklmnopqrstuvwxyz",numbers = "0123456789";
-    let validation1,validation2,validation3;
-    
-    if(charmin>0) if(passaword1.length < charmin) return false;
-        
-    for(let i in capital){
-        if(passaword1.includes(capital[i])){
-            validation1 = true;
+    inputValidation(min, max, input, t) {
+
+        for (let i in t) {
+            if (input.includes(t[i])) {
+                return false;
+            }
+        }
+
+        if (input.length > min && input.length <= max && input.length > 0) {
+            return this.confirmation;
+        } else {
+            return false;
         }
     }
-    for(let i in lower){
-        if(passaword1.includes(lower[i])){
-            validation2 = true;
-        }   
-    }
-    for (let i in numbers){
-        if(passaword1.includes(numbers[i])){
-            validation3 = true;
+
+    passawordValidation(passaword1, charmin) {
+
+        let capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            lower = "abcdefghijklmnopqrstuvwxyz",
+            numbers = "0123456789";
+        let validation1, validation2, validation3;
+
+        if (charmin > 0)
+            if (passaword1.length < charmin) return false;
+
+        for (let i in capital) {
+            if (passaword1.includes(capital[i])) {
+                validation1 = true;
+            }
         }
-    }
-    
-    if(validation1 == true && validation2 == true && validation3 == true){
-        return this.confirmation;
+        for (let i in lower) {
+            if (passaword1.includes(lower[i])) {
+                validation2 = true;
+            }
+        }
+        for (let i in numbers) {
+            if (passaword1.includes(numbers[i])) {
+                validation3 = true;
+            }
+        }
+
+        if (validation1 == true && validation2 == true && validation3 == true) {
+            return this.confirmation;
+        }
+
     }
 
-  }
 
-    
-}   
+}
 
 
 const functionTest = (param, method, test, answer) => {
@@ -725,48 +720,48 @@ const functionTest = (param, method, test, answer) => {
 
             }
 
-        } else if(param == 6){
-        
-        for(let i in test){
-           
-            param1 = test[i][0];
-            param2 = test[i][1];
-            param3 = test[i][2];
-            param4 = test[i][3];
-            param5 = test[i][4];
-            param6 = test[i][5];
-            
-            
-        if(method(param1,param2,param3,param4,param5,param6) == answer[i])
-            values.push(true);
-            
-        else 
-            values.push(false);
-            
+        } else if (param == 6) {
+
+            for (let i in test) {
+
+                param1 = test[i][0];
+                param2 = test[i][1];
+                param3 = test[i][2];
+                param4 = test[i][3];
+                param5 = test[i][4];
+                param6 = test[i][5];
+
+
+                if (method(param1, param2, param3, param4, param5, param6) == answer[i])
+                    values.push(true);
+
+                else
+                    values.push(false);
+
+            }
+
+        } else if (param == 7) {
+
+            for (let i in test) {
+
+                param1 = test[i][0];
+                param2 = test[i][1];
+                param3 = test[i][2];
+                param4 = test[i][3];
+                param5 = test[i][4];
+                param6 = test[i][5];
+                param7 = test[i][6];
+
+
+                if (method(param1, param2, param3, param4, param5, param6, param7) == answer[i])
+                    values.push(true);
+
+                else
+                    values.push(false);
+
+            }
+
         }
-        
-    } else if(param == 7){
-        
-        for(let i in test){
-           
-            param1 = test[i][0];
-            param2 = test[i][1];
-            param3 = test[i][2];
-            param4 = test[i][3];
-            param5 = test[i][4];
-            param6 = test[i][5];
-            param7 = test[i][6];
-            
-            
-        if(method(param1,param2,param3,param4,param5,param6,param7) == answer[i])
-            values.push(true);
-            
-        else 
-            values.push(false);
-            
-        }
-        
-    } 
 
     }
     if (values.includes(false) == true) return false;
@@ -780,13 +775,13 @@ const functionTest = (param, method, test, answer) => {
 
 
 const generateString = (length) => {
-   let result           = '';
-   let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-   let charactersLength = characters.length;
-   for ( let i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-   }
-   return result;
+    let result = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
 }
 
 
@@ -840,49 +835,49 @@ class Queue {
 
 
 class LinkedListItem {
-  constructor(value, next) {
-    this.value = value;
-    this.next = next;
-  }
+    constructor(value, next) {
+        this.value = value;
+        this.next = next;
+    }
 }
 
 class LinkedList {
-  constructor() {
-    this.head = null;
-  }
-  prepend(value) {
-    const newItem = new LinkedListItem(value, this.head);
-    this.head = newItem;
-  }
-  find(value) {
-    if (!this.head) {
-      return null;
-    }
-    let currentNode = this.head;
-    while (currentNode) {
-      if (currentNode.value === value) {
-        return currentNode;
-      }
-      currentNode = currentNode.next;
-    }
-  }
-  deleteHead() {
-    if (this.head) {
-      if (this.head.next) {
-        const secondNode = this.head.next;
-        this.head = secondNode;
-      } else {
+    constructor() {
         this.head = null;
-      }
     }
-  }
-  viewElements() {
-    let currentNode = this.head;
-    while (currentNode) {
-      console.log(currentNode.value);
-      currentNode = currentNode.next;
+    prepend(value) {
+        const newItem = new LinkedListItem(value, this.head);
+        this.head = newItem;
     }
-  }
+    find(value) {
+        if (!this.head) {
+            return null;
+        }
+        let currentNode = this.head;
+        while (currentNode) {
+            if (currentNode.value === value) {
+                return currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+    }
+    deleteHead() {
+        if (this.head) {
+            if (this.head.next) {
+                const secondNode = this.head.next;
+                this.head = secondNode;
+            } else {
+                this.head = null;
+            }
+        }
+    }
+    viewElements() {
+        let currentNode = this.head;
+        while (currentNode) {
+            console.log(currentNode.value);
+            currentNode = currentNode.next;
+        }
+    }
 }
 
 const quicksort = (array) => {
@@ -959,8 +954,8 @@ const perimeterOf = new Perimeter();
 const ofConjunts = new Conjunts();
 const statistic = new Statistics();
 const geometryAnalitic = new AnaliticGeometry();
-const equations = Equations();
-const formTools = FormTools();
+const equations = new Equations();
+const formTools =  new FormTools();
 const stack = new Stack();
 const queue = new Queue();
 const linkedList = new LinkedList();
@@ -971,4 +966,3 @@ const linkedList = new LinkedList();
 
 
 //Testing zone
-
