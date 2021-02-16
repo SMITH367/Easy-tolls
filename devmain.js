@@ -284,7 +284,6 @@ class Perimeter {
     }
 }
 
-
 class Conjunts {
 
     constructor() {
@@ -771,6 +770,41 @@ const functionTest = (param, method, test, answer) => {
     }
 
 
+}
+
+const typeofMethod = (method, expetedType,datas) => {
+
+    let typeMethod = typeof (method);
+    let dataType;
+    let expected;
+    if (expetedType == typeMethod) {
+        dataType = true;
+    } else {
+        dataType = undefined
+    }
+    if(dataType != undefined && dataType === true && datas != 1){
+        return true; 
+    } else if(dataType === undefined && datas != 1){
+        return false; 
+    }
+
+    if (dataType != undefined && dataType === true && datas === 1) {
+        expected = {
+            "expetedType": expetedType,
+            "typeMethod": typeMethod,
+            "validation": dataType
+        };
+        return expected;
+
+    }
+    else if (dataType === undefined && datas === 1 ) {
+        expected = {
+            "expetedType": expetedType,
+            "typeMethod": typeMethod,
+            "validation": false
+        };
+        return expected;
+    }
 }
 
 
