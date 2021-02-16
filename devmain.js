@@ -772,7 +772,7 @@ const functionTest = (param, method, test, answer) => {
 
 }
 
-const typeofMethod = (method, expetedType,datas) => {
+const typeofMethod = (method, expetedType, datas) => {
 
     let typeMethod = typeof (method);
     let dataType;
@@ -782,7 +782,7 @@ const typeofMethod = (method, expetedType,datas) => {
     } else {
         dataType = undefined
     }
-    
+
 
     if (dataType != undefined && dataType === true && datas === 1) {
         expected = {
@@ -792,8 +792,7 @@ const typeofMethod = (method, expetedType,datas) => {
         };
         return expected;
 
-    }
-    else if (dataType === undefined && datas === 1 ) {
+    } else if (dataType === undefined && datas === 1) {
         expected = {
             "expetedType": expetedType,
             "typeMethod": typeMethod,
@@ -801,11 +800,11 @@ const typeofMethod = (method, expetedType,datas) => {
         };
         return expected;
     }
-    if(dataType != undefined && dataType === true && datas != 1){
-        return true; 
-    } else if(dataType != undefined && datas != 1){
-        return false; 
-    } else{
+    if (dataType != undefined && dataType === true && datas != 1) {
+        return true;
+    } else if (dataType != undefined && datas != 1) {
+        return false;
+    } else {
         return typeMethod;
     }
 }
