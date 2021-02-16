@@ -782,11 +782,7 @@ const typeofMethod = (method, expetedType,datas) => {
     } else {
         dataType = undefined
     }
-    if(dataType != undefined && dataType === true && datas != 1){
-        return true; 
-    } else if(dataType === undefined && datas != 1){
-        return false; 
-    }
+    
 
     if (dataType != undefined && dataType === true && datas === 1) {
         expected = {
@@ -804,6 +800,13 @@ const typeofMethod = (method, expetedType,datas) => {
             "validation": false
         };
         return expected;
+    }
+    if(dataType != undefined && dataType === true && datas != 1){
+        return true; 
+    } else if(dataType != undefined && datas != 1){
+        return false; 
+    } else{
+        return typeMethod;
     }
 }
 
