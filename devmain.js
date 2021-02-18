@@ -12,7 +12,7 @@ class CalcArray {
     constructor() {
 
         this.addArray = 0;
-        this.productA;
+         this.productA;
         this.averagea = 0;
         this.maximun = 0;
         this.minimun;
