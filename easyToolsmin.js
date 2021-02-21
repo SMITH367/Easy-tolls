@@ -134,3 +134,4 @@ return position}
 const ofArray=new CalcArray();const areaOf=new Areas();const perimeterOf=new Perimeter();const ofConjunts=new Conjunts();const statistic=new Statistics();const geometryAnalitic=new AnaliticGeometry();const equations=new Equations();const formTools=new FormTools();const stack=new Stack();const queue=new Queue();const linkedList=new LinkedList();
 
 
+
