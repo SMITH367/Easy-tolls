@@ -12,10 +12,8 @@ class CalcArray {
     constructor() {
 
         this.addArray = 0;
-         this.productA;
+        this.productA;
         this.averagea = 0;
-        this.maximun = 0;
-        this.minimun;
         this.object = {}
 
     }
@@ -49,37 +47,6 @@ class CalcArray {
         }
         return this.averagea / array.length;
     }
-
-    maximunValue(array) {
-
-        //Obtain maximun value of an array
-
-
-        for (let i in array) {
-            if (this.maximun < array[i]) {
-                this.maximun = array[i];
-            }
-        }
-
-        return this.maximun;
-    }
-    minimunValue(array) {
-
-        //Obtain minimun value of an array
-
-        for (let i in array) {
-
-            this.minimun = array[0]
-
-            if (this.minimun > array[i]) {
-                this.minimun = array[i];
-
-            }
-        }
-        return this.minimun;
-
-    }
-
 
     generateArray(numberof) {
 
