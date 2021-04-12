@@ -135,3 +135,24 @@ const ofArray=new CalcArray();const areaOf=new Areas();const perimeterOf=new Per
 
 
 
+export {
+
+    ofArray,
+    areaOf,
+    perimeterOf,
+    ofConjunts,
+    geometryAnalitic,
+    equations,
+    statistic,
+    formTools,
+    stack,
+    queue,
+    linkedList,
+    generateString,
+    binarySearch,
+    bubbleSort,
+    quicksort,
+    typeofMethod,
+    functionTest
+
+};
