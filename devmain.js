@@ -48,25 +48,6 @@ class CalcArray {
         return this.averagea / array.length;
     }
 
-    generateArray(numberof) {
-
-        //Generating an array
-
-        let array = [];
-        if (numberof < 1000000) {
-            let generator;
-            console.log(numberof);
-            for (let i = 0; i < numberof; i++) {
-
-                generator = parseInt(Math.random() * 100);
-                array.push(generator);
-            }
-            return array;
-        }
-
-    }
-
-
     type(array) {
 
         let aux = 0,
@@ -595,7 +576,67 @@ class FormValidation {
 
     }
 
+}
+class Generate {
 
+
+    constructor() {
+
+        this.array = [];
+        this.strings = "";
+        this.numberg = 0;
+    }
+
+    number(min, max) {
+
+        this.numberg = (Math.floor(Math.random() * (max - min)) + min);
+        return this.numberg;
+
+    }
+
+
+    string(length) {
+
+        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let charactersLength = characters.length;
+        for (let i = 0; i < length; i++) {
+            this.strings += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return this.strings;
+    }
+
+    arrayN(numberof) {
+
+        //Generating an array
+
+
+        if (numberof < 1000000) {
+            let generator;
+            for (let i = 0; i < numberof; i++) {
+
+                generator = parseInt(Math.random() * 100);
+                this.array.push(generator);
+            }
+            return this.array;
+        }
+
+    }
+    arrayS(numberof) {
+
+        //Generating an array
+
+        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let charactersLength = characters.length;
+        
+        if (numberof < 1000000) {
+            for (let i = 0; i < numberof; i++) {
+                this.strings = this.string(Math.floor(Math.random() * (10 - 1)) + 1);
+                this.array.push(this.strings);
+                this.strings = ""
+            }
+        }
+        return this.array;
+    }
 }
 
 const functionTest = (param, method, test, answer) => {
@@ -789,15 +830,6 @@ const typeMethod = (method, expetedType, datas) => {
 }
 
 
-const generateString = (length) => {
-    let result = '';
-    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-}
 
 
 
@@ -960,6 +992,8 @@ const binarySearch = (value, array) => {
     }
     return position;
 }
+console.log(binarySearch(2,[9,2,1]))
+
 
 //Objects to export. 
 
@@ -972,6 +1006,7 @@ const statistic = new Statistics();
 const geometryCart = new AnaliticGeometry();
 const equations = new Equations();
 const forms = new FormValidation();
+const generate = new Generate();
 const stack = new Stack();
 const queue = new Queue();
 const linkedList = new LinkedList();
