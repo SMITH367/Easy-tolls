@@ -963,6 +963,7 @@ const binarySearch = (value, array) => {
 
 //Objects to export. 
 
+
 const ofArray = new CalcArray();
 const areaOf = new Areas();
 const perimeterOf = new Perimeter();
