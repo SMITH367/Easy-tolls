@@ -183,7 +183,6 @@ class Areas {
 }
 
 
-
 class Perimeter {
 
     constructor() {
@@ -251,6 +250,7 @@ class Perimeter {
     }
 }
 
+
 class Conjunts {
 
     constructor() {
@@ -311,6 +311,7 @@ class Conjunts {
 
 
 }
+
 class Statistics {
     constructor() {
         this.mediad;
@@ -329,12 +330,12 @@ class Statistics {
         }
         return this.mediad / data.length;
     }
-    promedio(data) {
-        let average = 0;
+    average(data) {
+        let averaged = 0;
         for (let i in data) {
-            average += data[i];
+            averaged += data[i];
         }
-        return average / data.length;
+        return averaged / data.length;
     }
     mediana(data) {
 
@@ -384,7 +385,7 @@ class Statistics {
         }
         return this.varianced / (n - 1);
     }
-    standarDesviacion(data) {
+    standarDesv(data) {
         let variance = this.variance(data);
         this.standarDesviaciond = Math.sqrt(variance);
         return this.standarDesviaciond;
@@ -393,15 +394,16 @@ class Statistics {
 
 }
 
+
 class AnaliticGeometry {
     constructor() {
         this.rectEquationp;
-        this.distancep;
+        this.distancep = 0;
         this.pendingp;
         this.midPointp;
 
     }
-    rectEquation(x1, x2, y1, y2) {
+    equationR(x1, x2, y1, y2) {
         if (x1 === x2) {
             return false;
         } else {
@@ -412,7 +414,11 @@ class AnaliticGeometry {
     }
 
     distance(x1, x2, y1, y2) {
-        this.distancep = Math.sqrt(Math.pow(x2 - x1) + Math.pow(y2 - y1));
+
+        let x = x2 - x1;
+        let y = y2 - y1;
+        let distanceAux = Math.pow(x, 2) + Math.pow(y, 2);
+        this.distancep = Math.sqrt(distanceAux);
         return this.distancep;
     }
 
@@ -420,7 +426,7 @@ class AnaliticGeometry {
         let mx = (x2 + x1) / 2;
         let my = (y2 + y1) / 2;
         this.midPointp = [mx, my];
-        return this.midPoint;
+        return this.midPointp;
 
     }
     pending(x1, x2, y1, y2) {
@@ -439,7 +445,7 @@ class Equations {
         this.simpleEquationd;
         this.quadraticEquationd;
     }
-    simpleEquation(a, sign, b, c) {
+    simple(a, sign, b, c) {
         if (a != 0 && sign == "+") {
             this.simpleEquationd = (c - b) / a;
 
@@ -459,7 +465,7 @@ class Equations {
         return this.simpleEquationd;
 
     }
-    cuadraticEquation(a, b, c) {
+    cuadratic(a, b, c) {
         let determinator = Math.pow(b, 2) - (4 * a * c);
         let value1 = 0;
         let value2 = 0;
@@ -477,7 +483,8 @@ class Equations {
 }
 
 
-class FormTools {
+
+class FormValidation {
 
     constructor() {
 
@@ -486,7 +493,7 @@ class FormTools {
     }
 
 
-    emailValidation(email) {
+    email(email) {
 
         let position;
         let counter = 0;
@@ -525,7 +532,7 @@ class FormTools {
 
     }
 
-    phoneValidation(min, max, number) {
+    phone(min, max, number) {
 
 
         let lengthNumber = number.toString().length;
@@ -541,7 +548,7 @@ class FormTools {
         }
 
     }
-    inputValidation(min, max, input, t) {
+    input(min, max, input, t) {
 
         for (let i in t) {
             if (input.includes(t[i])) {
@@ -556,7 +563,7 @@ class FormTools {
         }
     }
 
-    passawordValidation(passaword1, charmin) {
+    passaword(passaword1, charmin) {
 
         let capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
             lower = "abcdefghijklmnopqrstuvwxyz",
@@ -591,17 +598,14 @@ class FormTools {
 
 }
 
-
 const functionTest = (param, method, test, answer) => {
 
     let values = [];
-    let param1, param2, param3, param4, param5, lenTest = 0,
+    let  lenTest = 0,
         datas = [];
 
 
-    for (let i in test) {
-        lenTest += test[i].length;
-    }
+    
 
     if (param == 1) {
         for (let i in test) {
@@ -615,7 +619,7 @@ const functionTest = (param, method, test, answer) => {
         }
     }
 
-    if (test.length == answer.length && param == lenTest) {
+    if (test.length == answer.length) {
 
         if (param == 2) {
 
@@ -623,12 +627,19 @@ const functionTest = (param, method, test, answer) => {
 
                 param1 = test[i][0];
                 param2 = test[i][1];
+                
 
                 if (method(param1, param2) == answer[i])
-                    values.push(true)
+                    
+                    values.push(true);
+                
+
 
                 else
                     values.push(false);
+                    
+                
+                    
 
             }
 
@@ -641,11 +652,10 @@ const functionTest = (param, method, test, answer) => {
                 param3 = test[i][2];
 
                 if (method(param1, param2, param3) == answer[i])
-                    values.push(true)
+                    values.push(true);
 
                 else
                     values.push(false);
-
             }
 
 
@@ -730,6 +740,7 @@ const functionTest = (param, method, test, answer) => {
         }
 
     }
+
     if (values.includes(false) == true) return false;
     else {
         if (values.length > 0) return true;
@@ -739,9 +750,10 @@ const functionTest = (param, method, test, answer) => {
 
 }
 
-const typeofMethod = (method, expetedType, datas) => {
 
-    let typeMethod = typeof (method);
+const typeMethod = (method, expetedType, datas) => {
+
+    let typeMethod = typeof(method);
     let dataType;
     let expected;
     if (expetedType == typeMethod) {
@@ -797,12 +809,12 @@ class Stack {
         this.stack = []
 
     }
-    insertNewElement(element) {
+    insert(element) {
 
         this.stack.push(element);
         return this.stack;
     }
-    deleteElement() {
+    delete() {
         this.stack.pop();
         return this.stack;
     }
@@ -820,12 +832,12 @@ class Queue {
         this.queue = [];
     }
 
-    insertNewElement(element) {
+    insert(element) {
 
         this.queue.push(element);
         return this.queue;
     }
-    deleteElement() {
+    delete() {
         return this.queue.shift();
     }
     showSize() {
@@ -883,7 +895,7 @@ class LinkedList {
     }
 }
 
-const quicksort = (array) => {
+const quickSort = (array) => {
 
     //Algorithm quicksort for order arrays
 
@@ -906,7 +918,7 @@ const quicksort = (array) => {
 
         }
     }
-    return quicksort(left).concat(index, quicksort(right));
+    return quickSort(left).concat(index, quickSort(right));
 };
 
 const bubbleSort = (array) => {
@@ -956,9 +968,9 @@ const areaOf = new Areas();
 const perimeterOf = new Perimeter();
 const ofConjunts = new Conjunts();
 const statistic = new Statistics();
-const geometryAnalitic = new AnaliticGeometry();
+const geometryCart = new AnaliticGeometry();
 const equations = new Equations();
-const formTools = new FormTools();
+const forms = new FormValidation();
 const stack = new Stack();
 const queue = new Queue();
 const linkedList = new LinkedList();
