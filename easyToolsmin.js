@@ -102,6 +102,8 @@ if(values.includes(!1)==!0)return!1;else{if(values.length>0)return!0}}
 const typeMethod=(method,expetedType,datas)=>{let typeMethod=typeof(method);let dataType;let expected;if(expetedType==typeMethod){dataType=!0}else{dataType=undefined}
 if(dataType!=undefined&&dataType===!0&&datas===1){expected={"expetedType":expetedType,"typeMethod":typeMethod,"validation":dataType};return expected}else if(dataType===undefined&&datas===1){expected={"expetedType":expetedType,"typeMethod":typeMethod,"validation":!1};return expected}
 if(dataType!=undefined&&dataType===!0&&datas!=1){return!0}else if(dataType!=undefined&&datas!=1){return!1}else{return typeMethod}}
+
+const confirmType=(parameters,type)=>{if(parameters.length===type.length){for(let i in parameters){if(typeof(parameters[i])===type[i]){return!0}else{return console.error("Type is not the expected")}}}else{return console.error("parameters are missing")}}
 class Stack{constructor(){this.stack=[]}
 insert(element){this.stack.push(element);return this.stack}
 delete(){this.stack.pop();return this.stack}
@@ -147,6 +149,7 @@ export {
     bubbleSort,
     quickSort,
     typeMethod,
-    functionTest
+    functionTest,
+    confirmType
 
 };

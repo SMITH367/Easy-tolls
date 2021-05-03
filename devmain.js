@@ -778,6 +778,24 @@ const functionTest = (param, method, test, answer) => {
 
 }
 
+const confirmType = (parameters,type) =>{
+
+    if(parameters.length === type.length){
+        for(let i in parameters){
+
+            if(typeof(parameters[i]) === type[i]){
+                return true;
+            } else{
+    
+                return console.error("Type is not the expected"); 
+            }
+        }
+    } else {
+
+        return console.error("parameters are missing"); 
+    }
+
+}
 
 const typeMethod = (method, expetedType, datas) => {
 
