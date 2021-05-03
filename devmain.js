@@ -2,13 +2,8 @@
 Easy tools, simple and usefull library
 */
 
-
-
-
-/* Arrays tools*/
-
 class CalcArray {
-    //calculate operations and tolls for use with arrays.
+    
     constructor() {
 
         this.addArray = 0;
@@ -19,7 +14,6 @@ class CalcArray {
     }
 
     adition(array) {
-        //Obtain the add of all elements of an array 
 
         for (let i in array) {
             this.addArray += array[i];
@@ -40,8 +34,6 @@ class CalcArray {
 
 
     average(array) {
-        //Obtain a average of an array.
-
         for (let i in array) {
             this.averagea += array[i];
         }
@@ -96,9 +88,6 @@ class CalcArray {
 
     arrayTObject(array) {
 
-        //return an object with index = id of array and value is the argument of array
-
-
 
         for (let i in array) {
 
@@ -114,8 +103,6 @@ class Areas {
     constructor() {
         this.area = true;
     }
-    // Areas and perimeters
-
     circle(radio) {
 
         this.area = Math.PI * radio ** 2;
@@ -384,7 +371,7 @@ class AnaliticGeometry {
         this.midPointp;
 
     }
-    equationR(x1, x2, y1, y2) {
+    equation(x1, x2, y1, y2) {
         if (x1 === x2) {
             return false;
         } else {
@@ -992,7 +979,6 @@ const binarySearch = (value, array) => {
     }
     return position;
 }
-console.log(binarySearch(2,[9,2,1]))
 
 
 //Objects to export. 
@@ -1010,10 +996,5 @@ const generate = new Generate();
 const stack = new Stack();
 const queue = new Queue();
 const linkedList = new LinkedList();
-
-
-//Exporting all objects and functions
-
-
 
 //Testing zone
