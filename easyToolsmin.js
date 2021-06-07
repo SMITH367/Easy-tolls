@@ -141,7 +141,7 @@ export {
     equations,
     statistic,
     generate,
-    formTools,
+    forms,
     stack,
     queue,
     linkedList,
